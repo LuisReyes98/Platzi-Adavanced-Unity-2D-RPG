@@ -9,16 +9,21 @@ public class PlayerController : MonoBehaviour
     private const string horizontal = "Horizontal";
     private const string vertical = "Vertical";
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // s = v * t
+        /*
+            control de movimiento del usuario
+        */
         if (Mathf.Abs(Input.GetAxisRaw(horizontal)) > 0.5f)
         {
             this.transform.Translate(
@@ -32,5 +37,10 @@ public class PlayerController : MonoBehaviour
                 new Vector3(0, Input.GetAxisRaw(vertical) * speed * Time.deltaTime, 0)
             );
         }
+        /*
+            sincronizando con el grafo de animaciones
+        */
+        animator.SetFloat(horizontal, Input.GetAxisRaw(horizontal));
+        animator.SetFloat(vertical, Input.GetAxisRaw(vertical));
     }
 }
