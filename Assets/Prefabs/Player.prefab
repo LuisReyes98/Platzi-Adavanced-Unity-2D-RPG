@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ef186b308d1d14d85e02b4481668a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 800
+  speed: 700
   lastMovement: {x: 0, y: 0}
+  nextPlaceName: 
 --- !u!95 &8490570856563142285
 Animator:
   serializedVersion: 3
